@@ -11,7 +11,7 @@ function App() {
 
   // Connect to backend socket server
   useEffect(() => {
-    const s = io("http://localhost:5000");
+    const s = io(process.env.REACT_APP_SERVER_URL);
     setSocket(s);
 
     return () => s.disconnect();
